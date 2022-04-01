@@ -46,8 +46,10 @@ public class AddBookController {
 		String name = request.getParameter("bookname");
 		String author = request.getParameter("author");
 		
+		
 		String data = "name="+name+"&author="+author;
 		System.out.println();
+		System.out.println(" ");
 		Book book = new Book(name,author);
 		ResponseEntity<Book> b = restTemplate.postForEntity("http://localhost:8090/addBook", book, Book.class);
 		System.out.println(b.getBody());
